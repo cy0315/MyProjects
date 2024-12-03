@@ -1,9 +1,5 @@
 package com.nanshan.enb;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.nanshan.enb.dao.OwnerDAO;
 import com.nanshan.enb.dao.PolicyDAO;
-import com.nanshan.enb.enums.Gender;
-import com.nanshan.enb.model.Owner;
-import com.nanshan.enb.model.Policy;
-import com.nanshan.enb.util.EnumUtils;
+import com.nanshan.enb.util.ENBConfigUtil;
 
 @SpringBootApplication
 public class ENbApplication implements CommandLineRunner{
@@ -31,8 +24,12 @@ public class ENbApplication implements CommandLineRunner{
 	@Autowired
 	OwnerDAO ownerDAO;
 	
+	@Autowired
+	ENBConfigUtil enbUtil;
+	
 	@Override
 	public void run(String... args) throws Exception {
+		System.out.println(enbUtil.getApplicationName());
 		
 		//System.out.println(EnumUtils.getAllEnumsInPackage("com.nanshan.enb.enums"));;
 	}

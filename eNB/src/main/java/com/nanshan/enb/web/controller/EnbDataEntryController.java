@@ -28,7 +28,7 @@ public class EnbDataEntryController {
 	@Autowired
 	private OwnerDAO ownerDao;
 	
-	@GetMapping("sayHello")//(value="sayHello",produces = "text/plain;charset=utf-8")
+	@GetMapping("sayHello")
 	public String sayHello() {
 		return "你好, 現在是".concat(SimpleDateFormat.getInstance().format(new Date()));
 	}
